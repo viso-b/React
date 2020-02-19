@@ -1,0 +1,239 @@
+#header-conteiner{
+    padding: 0 $mainPadding;
+    background-color: $backgroundColorLight;
+    .header_top{
+        height: 40px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 335;
+        padding: 0 $mainPadding;
+        background-color: $defaultColorDark;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .header_top_regions{
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            line-height: 16px;
+            >span{
+                color: $menuFontColor;
+                margin-right: 10px;
+                user-select: none;
+                + div{
+                    position: relative;
+                }
+            }
+            .select-container{
+                display: flex;
+                align-items: center;
+                user-select: none;
+                cursor: pointer;
+                >input{
+                    width: 95px;
+                    color: $primaryFontColorLight;
+                }
+                &::after{
+                    @include button($defaultColorWhite, 45deg);
+                    width: 5px;
+                    height: 5px;
+                }
+                &.open + .select-regions{
+                    display: block;
+                }
+            }
+            .select-regions{
+                position: absolute;
+                top: 20px;
+                left: 0;
+                display: none;
+                >ul{
+                    background-color: $primaryFontColorDark;
+                    padding: 10px 15px ;
+                    li{
+                        color: $primaryFontColorLight;
+                        margin: 5px;
+                        border-bottom:1px solid transparent;
+
+                        &:hover{
+                            border-bottom:1px solid $primaryFontColorLight ;
+                        }
+                        
+                    }
+                }
+            }
+        }
+        nav{
+            font-size: 13px;
+            a{
+                color:$menuFontColor ;
+                margin-left: 75px;
+            }
+        }
+    }
+    .header_menu{
+        background-color: $backgroundColorLight;
+        padding-top: 54px;
+        display: flex;
+        flex-direction: column;
+        >div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .header_menu-bttn{
+                display: none;
+                height: 21px;
+                width: 30px;
+                cursor: pointer;
+                background: url('../img/menu.png') no-repeat center/contain;
+                & + div{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-grow: 10;
+                }
+            }
+            .menu_contact-info{
+               @include contactInfo;
+            }
+            .menu_bttn-call{
+                font-size: 14px;
+                color: $primaryFontColorDark;   
+                &:hover{
+                    color: $secondaryFontColor; 
+                } 
+            }
+            .menu_logo{
+                flex-grow: 11;
+                @include logo;
+            }
+            .container-search{
+                flex-grow: 12;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                align-self: flex-end;
+                margin: 0 20px;
+                .search_menu{
+                    padding: 5px 10px;
+                    border-radius: 20px;
+                    border: 1px solid transparent;
+                    margin-right: 20px;
+                    &:focus{
+                    border: 1px solid $borderSearch;
+                    color: $secondaryFontColor;
+                    }
+                }
+                .search_button{
+                    color: $menuFontColor;
+                    margin-right: 25px;
+                    cursor: pointer;
+                    &::before{
+                        content: '';
+                        display: block;
+                        width: 22px;
+                        height: 22px;
+                        background: url('../img/search-icon.png') no-repeat center/contain;
+                        margin-bottom: 16px;
+                    }
+                    &::after{
+                        content: 'Поиск';
+                        display: block;
+                        font-size: 12px;
+                        line-height: 213%;
+                    }
+                }
+            }
+            .menu_operation-shops{
+                flex-grow: 8;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                a.comparis{
+                    margin-right: 25px;
+                    cursor: pointer;
+                    &::before{
+                        content: '';
+                        display: block;
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        background: $buttonFontNoActive url('../img/libra_icon.png') no-repeat center/22px 22px;
+                        margin: 8px 0;
+                       
+                    }
+                    &:hover::before{
+                        background-color: $buttonFontColor;
+                    }
+                    &::after{
+                        content: 'Сравнение';
+                        display: block;
+                        font-size: 12px;
+                        line-height: 213%;
+                        color: $menuFontColor;
+
+                    }
+                }
+                a.shopping-basket{
+                    cursor: pointer;
+                    &::before{
+                        content: '';
+                        display: block;
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        background: $buttonFontNoActive url('../img/basket_icon.png') no-repeat center/22px 22px;
+                        margin: 8px 0;
+                    }
+                    &:hover::before{
+                        background-color: $buttonFontColor;
+                    }
+                    &::after{
+                        content: 'Корзина';
+                        display: block;
+                        font-size: 12px;
+                        line-height: 213%;
+                        color: $menuFontColor;
+
+                    }
+                }
+            
+            }
+        }
+        &:after{
+            content: '';
+            display: block;
+            width: calc(100% + 150px);
+            margin-left: -$mainPadding;
+            border: 1px solid $primaryFontColorDark;
+        }   
+    }
+    
+    .conteiner_menu-nav{
+        padding: 10px 0;
+        &:after{
+            content: '';
+            display: block;
+            width: calc(100% + 150px);
+            margin-left: -$mainPadding;
+            border-top: 1px solid $borderВecorative;
+        }
+        .header_menu-nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            > a{
+                margin: 0 10px;
+                @include menu-text;
+                &:first-of-type{
+                    margin-left: 0;
+                }
+                &:last-of-type{
+                    margin-right: 0;
+                }
+            }
+        }        
+    }
+}

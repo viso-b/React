@@ -1,0 +1,150 @@
+@media screen and (max-width: $desktopWidth  ) {
+    #header-conteiner{
+        padding: 0 $desktopPadding;
+        .header_top{
+            padding: 0 $desktopPadding;
+        }
+    }
+
+}
+
+@media screen and (max-width: $tableWidth) {
+    #root{
+        #header-conteiner{
+            padding: 0 $tablePadding ;
+            .header_top{
+                display: none;
+            }
+            .header_menu{
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 333;
+                padding-top: 0;
+                >div{
+                    .header_menu-bttn{
+                        display: block;
+                        flex-grow: 2;
+                        margin: 0 3px;
+                        flex-shrink: 0;
+                        order:0;
+                        &+div{
+                            display: flex;
+                            flex-direction: column;
+                            flex-grow: 8;
+                            order:2;
+                            .contact-info_phone{
+                                font-size: 14px;
+                            }
+                            .menu_bttn-call{
+                                font-size: 12px;
+                            }
+                            .menu_contact-info{
+                                .contact-info_timetable{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    .menu_logo{
+                        flex-grow: 10;
+                        justify-content: flex-start;
+                        order:1;
+                        &::after{
+                            height: 48px;
+                            width: 178px;  
+                        }
+                    }
+                    .container-search{
+                        position: relative;
+                        margin: 0;
+                        order: 3;
+                        .search_menu{
+                            display: none;
+                            .open{
+                                display: block;
+                                position: absolute;
+                                top: 5px;
+                                left: 0;
+                            }
+                        }
+                        .search_button{
+                            &::after{
+                                display:none;
+                            }
+                        } 
+                    }
+                    .menu_operation-shops{
+                        flex-grow: 7;
+                        order:5;
+
+                        a.shopping-basket{
+                            &::after{
+                                display:none;
+                            }  
+                        }
+                        a.comparis{
+                            &::after{
+                                display:none;
+                            }  
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .conteiner_menu-nav{
+            position: fixed;
+            top: 65px;
+            left: 0;
+            right: 0;
+            z-index: 330;
+            display:none;
+            background-color: $defaultColorWhite;
+            nav.header_menu-nav{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                border: 1px solid $borderВecorative;
+            }
+            &.open{
+                display: block;
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: $phoneWidth) {
+    #root{
+        #header-conteiner{
+            .header_menu{
+                > div{  
+                    .header_menu-bttn{
+                        &+div{
+                            display: none;              
+                        }
+                    }
+                }
+            }
+            .menu_logo{
+                flex-grow: 8;
+                &::after{
+                    height: 35px;
+                    width: 127px;  
+                }
+            }
+            .container-search{
+                flex-grow: 2;
+                justify-content: center;  
+                
+            }
+            .menu_operation-shops{
+                flex-grow: 3;
+                a.comparis{
+                    display: none;
+                }
+            }
+        }
+    }
+}

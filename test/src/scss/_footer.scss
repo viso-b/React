@@ -1,0 +1,168 @@
+#footer-conteiner{
+    display: flex;
+    flex-direction: column;
+    background-color: $defaultColorWhite;
+    padding: 0 $mainPadding;
+    border-top: 1px solid $primaryFontColorDark;
+    overflow-x:hidden;  
+    &::before{
+        content: '';
+        border-top: 1px solid $secondaryFontColor;
+        width: calc(100% + 300px);
+        margin: 2px -150px 0;
+    }
+    .conteiner_logo-mobile{
+        display: none;
+        .logo-mobile{
+            @include logo;
+        }
+    }
+    .container_info-footer{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 36px 0 10px;
+        .container_footer_menu{
+            .menu_mobile-bttn{
+                display: none;
+                align-items: center;
+                font-family: $primaryFont ;
+                font-size: 24px;
+                letter-spacing: 10%;
+                color: $mainFontColor;
+                cursor: pointer;
+                &:after{
+                    @include button($primaryColor, -45deg);
+                    width: 8px;
+                    height: 8px;
+                    margin-left: 10px;
+                    padding-bottom: 3px;
+                }
+            }
+            .footer_menu{
+                display: flex;
+                width: 100%;
+                .footer_menu_products{
+                    display: flex;
+                    flex-direction: column;
+                    max-height: 220px;
+                    min-width: 320px;
+                    flex-wrap: wrap;
+                    >a{
+                        display: block;
+                        @include menu-text;
+                        line-height: 32px;
+                        &:first-of-type{
+                            line-height: 18px;
+                            margin-bottom: 7px;
+                        }
+                    }
+                } 
+                .footer_menu_info-shop{
+                    display: flex;
+                    flex-direction: column;
+                    >a{
+                        font-size: 14px;
+                        color: $mainFontColor;
+                        margin-bottom: 10px;
+                        &:hover{
+                            color: $secondaryFontColor;
+                        }
+                        &::last-of-type{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+            }
+            
+        }
+        .info-footer_contact{
+
+            .menu_contact-info{
+                @include contactInfo;
+                margin-top: 20px;
+            }
+            .menu_bttn-call{
+                font-size: 14px;
+                color: $mainFont;
+                border: 1px solid $primaryColor;
+                padding: 7px 35px;
+                margin-top: 20px;
+                &:hover{
+                    color: $borderActive;
+                    border-color: $borderActive;
+                }
+            }
+        }
+        .info-footer_pay{
+            >h6{
+                font-size: 14px;
+                color: $secondaryFontColor;
+            }
+            .pay_conteiner_logo{
+                display: flex;
+                .card{
+                    display: block;
+                    height: 55px;
+                    width: 62px;
+                    background: no-repeat center/contain;
+                    margin-right: 50px;
+                }
+            }
+            
+        }
+        .bttn-up{
+            border: 1px solid $secondaryFontColor;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+            cursor: pointer;
+            align-self: center;
+            position: fixed;
+            right: 70px;
+            bottom: 120px;
+            z-index: 400;
+            &:before{
+                content:'';
+                width: 10px;
+                height: 10px;
+                display: block;
+                border-right: 2px solid $borderActive;
+                border-bottom: 2px solid  $borderActive;
+                transform: rotate(-135deg);
+            }
+            &:after{
+                content: '';
+                display: block;
+                width: 2px;
+                height: 37px;
+                background-color: $primaryColor;
+                transform: translateY(-10px);
+            }
+            &.show{
+                display: flex;
+            }
+        }
+    }
+    .conteiner_footer-links{
+        .menu_logo{
+            @include logo;
+            width: 178px;
+            height: 48px;
+        }
+        .email_link{
+            font-size: 12px;
+            color: $secondaryFontColor;
+            display: block;
+            margin: 15px 0;
+            > span{
+                color: $borderActive;
+            }
+        }
+    }
+}

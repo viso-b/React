@@ -1,0 +1,155 @@
+@media screen and (max-width: $desktopWidth  ) {
+    #footer-conteiner{
+        padding: 0 $desktopPadding;
+    }
+
+}
+@media screen and (max-width: $tableWidth) {
+    #root{
+        #footer-conteiner{
+            padding: 0 $tablePadding ;
+            text-align: left;
+
+            .container_info-footer{
+
+                .info-footer_contact{
+                    order: 10;
+                }
+                .info-footer_pay{
+                    h6{
+                        max-width: 170px;
+                        text-align: left;
+                    }
+                    .pay_conteiner_logo{
+                        max-width: 200px;
+                        margin: 0 auto; 
+                    }                    
+                }
+                .bttn-up{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $phoneWidth) {
+    #root{
+        #footer-conteiner{
+            display: flex;
+            flex-direction: column;
+            .conteiner_logo-mobile{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 30px;
+                .logo_mobile{
+                    width: 178px;
+                    height: 48px;
+                }
+                &:after{
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    border-top: 1px solid $borderВecorative;
+                    margin-top: 30px;
+                }
+            }
+            .container_info-footer{
+                flex-direction: column;
+                .container_footer_menu{
+                    display: flex;
+                        flex-direction: column;
+                    .menu_mobile{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                        .menu_mobile-bttn{
+                            display: flex;
+                        }
+                        &.open + .footer_menu{
+                            display: flex;
+                        }
+                    }
+                    .footer_menu{
+                        display: none;
+                        flex-direction: column;
+                        .footer_menu_products{
+                            max-height: unset;
+                            min-width: unset;
+                            flex-wrap: nowrap;
+                            >a{
+                                font-size:  20px;
+                                margin-right: unset;
+                                line-height: 22px;
+                                margin-bottom: 10px;
+                                
+                                &:first-of-type{
+                                    line-height: 22px;
+                                    margin-top: 20px;
+                                }
+                            }
+                            &:before{
+                                content: '';
+                                margin-top: 24px;
+                                border-top: 1px solid $borderВecorative;
+                            }
+
+                        }
+                        .footer_menu_info-shop{
+                            >a{
+                                @include menu-text;
+                                font-size:  20px;
+                                line-height: 22px;
+                            }
+                        }
+                    }
+                    &:after{
+                        content: '';
+                        margin-top: 24px;
+                        border-top: 1px solid $borderВecorative;
+                    }
+                }
+            }
+            .info-footer_pay{
+                margin: 14px 0 20px;
+                text-align: center;
+                &:after{
+                    content: '';
+                    display: block;
+                    border-top: 1px solid $borderВecorative;
+                }
+                >h6 span{
+                    display: none;
+                }
+                .pay_conteiner_logo{
+                    .card{
+                        margin: 0 auto;
+
+                    }
+                }
+            }
+            .info-footer_contact{
+                .menu_contact-info{
+                    align-items: center;
+                }
+                &:after{
+                    content: '';
+                    display: block;
+                    border-top: 1px solid $borderВecorative;
+                    margin-top: 30px;
+                }
+            }
+            .conteiner_footer-links{
+                align-self: center;
+                .menu_logo{
+                    display: none;
+                }
+                .email_link{
+                    max-width: 250px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

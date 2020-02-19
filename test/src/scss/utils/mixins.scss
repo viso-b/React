@@ -1,0 +1,70 @@
+@mixin menu-text{
+  font: {
+    family: $primaryFont;
+  }
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $mainFontColor;
+  line-height:  38px;
+  &:hover{
+    color: $secondaryFontColor; 
+  }
+}
+
+@mixin logo{
+  display: flex;
+  justify-content: flex-end;
+  &::after{
+    content: '';
+    display: flex;
+    height: 72px;
+    width: 262px;  
+    background: url('../img/logo.png') no-repeat center/contain;
+  }
+}
+@mixin button($border-color, $rotate){
+  content:'';
+  display: block;
+  border-right: 1px solid $border-color ;
+  border-bottom: 1px solid  $border-color;
+  transform: rotate($rotate);
+}
+@mixin contactInfo {
+  display: flex;
+  flex-direction: column;
+  .contact-info_phone{
+    color: $primaryFontColorDark;
+    line-height: 213.6%;
+  }
+  .contact-info_timetable{
+    display: block;
+    max-width: 138px;
+    font-size: 12px;
+    line-height: 140%;
+    color:$secondaryFontColor;
+  }
+}
+
+// @function rem($pixels, $context: $mainFontSize) {
+//   @if (unitless($pixels)) {
+//     $pixels: $pixels * 1px;
+//   }
+
+//   @if (unitless($context)) {
+//     $context: $context * 1px;
+//   }
+
+//   @return $pixels / $context * 1rem;
+// }
+
+// @mixin size($width,$height: $width) {
+//   width: $width;
+//   height: $height;
+// }
+
+// @mixin placeholder {
+//   ::-webkit-input-placeholder {@content}
+//   :-moz-placeholder           {@content}
+//   ::-moz-placeholder          {@content}
+//   :-ms-input-placeholder      {@content}
+// }

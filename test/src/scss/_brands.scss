@@ -1,0 +1,55 @@
+#main-conteiner{
+    .conteiner-brands{
+        margin: 30px  0 40px;
+        padding: 30px 30px 0;
+        background-color: $defaultColorWhite;
+        >h3{
+            font-family: $mainFont;
+            font-size: 20px;
+            line-height: 24px;
+            display: flex;
+            flex-direction: column;
+            max-width: 265px;
+            color: $primaryFontColorDark ;
+            border-bottom: 1px solid $defaultColorDark;
+            padding-bottom: 10px;
+            + div{
+                &:before{
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    border-bottom: 1px solid $borderВecorative;
+                    margin-bottom: 58px;
+                }
+            }
+        }
+        ul.list-brands{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
+            li{
+                height: 57px;
+                width: 216px;
+                background: no-repeat center/contain;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+// Адаптация
+
+
+@media screen and (max-width: $tableWidth) {
+    #root{
+        #main-conteiner{
+            .conteiner-brands{
+                padding: 40px $tablePadding;
+            }
+    
+        }
+    }
+    
+}
